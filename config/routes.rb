@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :posts
   resources :users
+  resources :follow_relationships, path: 'relationships'
 
   get 'feed' => 'feed#index'
   get 'explore' => 'feed#explore'
 
-  devise_for :users
 
   get 'welcome/index'
   root 'welcome#index'
