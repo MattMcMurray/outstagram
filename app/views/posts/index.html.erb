@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
-<h1>Posts</h1>
+<h2>Posts</h2>
 <ul class="posts--feed">
   <% @posts.each do |post| %>
     <li>
-      <h2>
+      <h3>
         <%= post.description %>
-      </h2>
+      </h3>
       <%= image_tag(post.image, class: "posts--image") if post.image.attached? %>
       <div>
         <%= link_to 'Details', post %>

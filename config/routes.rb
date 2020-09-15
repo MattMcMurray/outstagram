@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :posts
+  resources :users
   get 'create' => 'posts/create'
   get 'feed' => 'feed#index'
 
