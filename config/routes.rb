@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   resources :posts
-  get 'create' => 'posts/create'
+  resources :users
+
   get 'feed' => 'feed#index'
+  get 'explore' => 'feed#explore'
 
   devise_for :users
 

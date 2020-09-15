@@ -23,14 +23,13 @@
       <nav class="app--nav">
         <ul>
           <li>
-            <%= link_to 'feed' do %>
-              <i class="gg-feed" aria-label="Feed"></i>
-            <% end %>
+            <%= link_to 'Feed', '/feed' %>
           </li>
           <li>
-            <%= link_to @user do %>
-              <i class="gg-user"></i>
-            <% end %>
+            <%= link_to 'Explore', '/explore' %>
+          </li>
+          <li>
+            <%= link_to 'New Post', '/posts/new'%>
           </li>
         </ul>
       </nav>
