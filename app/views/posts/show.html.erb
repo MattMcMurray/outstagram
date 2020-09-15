@@ -3,6 +3,8 @@
 <p>
   <strong>Description:</strong>
   <%= @post.description %>
+
+  <%= image_tag(@post.image, class: "posts--image") if @post.image.attached? %>
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
