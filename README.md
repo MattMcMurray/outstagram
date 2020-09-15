@@ -11,6 +11,11 @@ $ bundle install
 $ yarn
 ```
 
+### Initialize DB
+```
+$ rails db:create db:migrate db:seed
+```
+
 ### Start the local server
 ```
 $ rails server
