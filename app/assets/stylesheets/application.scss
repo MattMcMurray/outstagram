@@ -14,10 +14,11 @@
  *= require_self
  */
 @import "Typebase.scss";
+@import "colors.scss";
 
 body {
   margin: 0;
-  padding: 1em;
+  padding: 0;
 }
 
 .app {
@@ -35,4 +36,14 @@ body {
       list-style-type: none;
     }
   }
+}
+
+.header-nav {
+  width: 100%;
+  background-color: $dark;
+  color: $beige;
+  height: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
