@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   get 'feed' => 'feed#index'
   get 'explore' => 'feed#explore'
+  post 'users/follow' => 'users#follow'
 
 
   get 'welcome/index'
