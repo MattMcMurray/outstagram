@@ -13,6 +13,7 @@ class UsersController < ApplicationController
   end
 
   def follow
+
     @follow = FollowRelationship.new(follower_id: current_user.id,
                                                   followee_id: params[:followee], active: true)
 
