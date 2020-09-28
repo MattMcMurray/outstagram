@@ -18,6 +18,7 @@ class UsersController < ApplicationController
                                                   followee_id: params[:followee], active: true)
 
     @follow.save
+    # TODO: check for errors
     redirect_to :controller => 'users', :action => 'show', :id => params[:followee]
   end
 

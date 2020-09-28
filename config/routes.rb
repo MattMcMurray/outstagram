@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+    registrations: 'users/registrations'
+  }
+
   resources :posts
   resources :users
   resources :follow_relationships, path: 'relationships'

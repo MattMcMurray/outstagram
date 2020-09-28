@@ -2,7 +2,7 @@
   <% @posts.each do |post| %>
     <div class="post">
       <h3><%= post.user.email %></h3>
-      <img src="<%= url_for(post.image) %>" class="posts--image">
+      <img src="<%= url_for(post.image) %>" class="feed--image">
       <p><%= post.description %></p>
     </div>
   <% end %>
