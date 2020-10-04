@@ -1,5 +1,7 @@
-<nav class="header">
-  <span>Outstagram</span>
+<nav class="app--header">
+  <span class="header--wordmark">
+    <%= link_to 'Outstagram', '/feed' %>
+  </span>
   <div class="header--links">
     <%= link_to destroy_user_session_path, method: :delete do %>Log out<% end %>
   </div>

@@ -1,3 +1,7 @@
-$header-height: 44px;
-$nav-height: 66px;
+// GLOBAL DIMENSIONS
+// ===================================================
+$header-height: 2rem;
+$nav-height: 3rem;
 $content-area-height: calc(#{$header-height} + #{$nav-height});
+// ===================================================
+// END GLOBAL DIMENSIONS

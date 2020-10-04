@@ -1,7 +1,10 @@
-<h1>Outstagram</h1>
-<% if current_user.nil? %>
-	<%= link_to new_user_session_path, class: 'login-button' do %>Sign in<% end %>
-<% else %>
-	<%= link_to "feed", class: 'login-button' do %>Go to App<% end %>
-	<%= link_to destroy_user_session_path, method: :delete do %>Log out<% end %>
-<% end %>
+<div class="welcome uk-flex uk-flex-center uk-flex-middle uk-flex-column">
+  <h1>Outstagram</h1>
+  <% if current_user.nil? %>
+		<%= link_to new_user_session_path, class: 'uk-button uk-button-primary uk-width-1-2' do %>Log in<% end %>
+		<%= link_to new_user_registration_path, class: 'uk-button uk-button-default uk-width-1-2' do%>Register<% end %>
+  <% else %>
+    <%= link_to "feed", class: 'login-button' do %>Go to App<% end %>
+    <%= link_to destroy_user_session_path, method: :delete do %>Log out<% end %>
+  <% end %>
+</div>
