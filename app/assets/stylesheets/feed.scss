@@ -5,8 +5,12 @@
 .feed {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
+
+  &--content {
+    max-width: 500px;
+  }
 
   &--image {
     width: 100%;

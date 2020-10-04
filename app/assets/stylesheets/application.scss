@@ -14,18 +14,32 @@
  *= require_self
  */
 @import "Typebase.scss";
-@import "colors.scss";
+@import "_vars/colors.scss";
+@import "_vars/vars.scss";
 
 body {
   margin: 0;
   padding: 0;
+
+  * {
+    box-sizing: border-box;
+  }
 }
 
 .app {
 
+  &--content {
+    overflow-y: scroll;
+    height: calc(100vh - #{$content-area-height});
+  }
+
   &--nav {
-    position: absolute;
+    position: fixed;
     bottom: 0;
+    width: 100%;
+    background-color: $dark;
+    height: 3em;
+    display: flex;
 
     ul, li {
       width: 100%;
@@ -35,15 +49,24 @@ body {
       align-items: center;
       list-style-type: none;
     }
+
+    &, a {
+      color: $off-white;
+    }
   }
 }
 
-.header-nav {
+.header {
   width: 100%;
   background-color: $dark;
-  color: $beige;
   height: 2rem;
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
+  padding: 0 1em;
+
+  &, a {
+    color: $off-white;
+  }
 }

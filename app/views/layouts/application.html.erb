@@ -18,23 +18,13 @@
              <% end %>
         </script>
       <% end %>
-      <nav class="header-nav">
-        <span>Outstagram</span>
-      </nav>
-      <%= yield %>
-      <nav class="app--nav">
-        <ul>
-          <li>
-            <%= link_to 'Feed', '/feed' %>
-          </li>
-          <li>
-            <%= link_to 'Explore', '/explore' %>
-          </li>
-          <li>
-            <%= link_to 'New Post', '/posts/new'%>
-          </li>
-        </ul>
-      </nav>
+      <%= render "layouts/components/header" %>
+      <div class="app--content">
+        <%= yield %>
+      </div>
+      <% if current_user.present? %>
+        <%= render "layouts/components/bottom_nav" %>
+      <% end %>
     </div>
   </body>
 </html>
