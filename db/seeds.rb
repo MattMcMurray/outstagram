@@ -10,9 +10,11 @@
     User.create! do |u|
       u.email = "test@example.com"
       u.password = "password"
+      u.username = "og_testuser"
     end
 
     User.create! do |u|
       u.email = "test2@example.com"
       u.password = "hunter2"
+      u.username = "the_huntsman"
     end
