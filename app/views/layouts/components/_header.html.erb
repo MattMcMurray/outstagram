@@ -2,7 +2,9 @@
   <span class="header--wordmark">
     <%= link_to 'Outstagram', '/feed' %>
   </span>
-  <div class="header--links">
-    <%= link_to destroy_user_session_path, method: :delete do %>Log out<% end %>
-  </div>
+  <%- if user_signed_in? %>
+    <div class="header--links">
+      <%= link_to destroy_user_session_path, method: :delete do %>Log out<% end %>
+    </div>
+  <%- end %>
 </nav>
