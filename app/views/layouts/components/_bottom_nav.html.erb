@@ -1,12 +1,12 @@
 <nav class="app--nav">
-  <ul>
-    <li>
+  <ul class="uk-tab">
+    <li class="<%= 'uk-active' if current_page? controller: :feed %>">
       <%= link_to 'Feed', '/feed' %>
     </li>
-    <li>
+    <li class="<%= 'uk-active' if current_page? controller: :feed, action: :explore %>">
       <%= link_to 'Explore', '/explore' %>
     </li>
-    <li>
+    <li class="<%= 'uk-active' if current_page? controller: :posts, action: :new %>">
       <%= link_to 'New Post', '/posts/new'%>
     </li>
   </ul>
