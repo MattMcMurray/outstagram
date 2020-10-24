@@ -15,4 +15,19 @@
   &--image {
     width: 100%;
   }
+
+  .post {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+
+    &--description {
+      margin-top: 0;
+      padding: 0 0.5rem;
+
+      span {
+        font-weight: bold;
+      }
+    }
+  }
 }

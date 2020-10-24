@@ -2,9 +2,11 @@
   <div class="feed--content">
     <% @posts.each do |post| %>
       <div class="post">
-        <h3><%= post.user.email %></h3>
         <img src="<%= url_for(post.image) %>" class="feed--image">
-        <p><%= post.description %></p>
+        <p class="post--description">
+          <span><%= post.user.username %></span>
+          <%= post.description %>
+        </p>
       </div>
     <% end %>
   </div>
