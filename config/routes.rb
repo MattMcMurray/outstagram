@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'feed' => 'feed#index'
   get 'explore' => 'feed#explore'
   post 'users/follow' => 'users#follow'
+  post 'users/unfollow' => 'users#unfollow'
 
 
   get 'welcome/index'

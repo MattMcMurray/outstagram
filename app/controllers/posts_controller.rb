@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.where(user_id: current_user.id)
+    redirect_to current_user
   end
 
   # GET /posts/1
@@ -65,6 +65,11 @@ class PostsController < ApplicationController
       end
     else
       respond_to do |format|
+        # GET /posts
+        # GET /posts.json
+        def index
+          @posts = Post.where(user_id: current_user.id)
+        end
         format.html { redirect_to posts_url, notice: 'Unauthorized' }
         format.json do
           self.status = :unauthorized
