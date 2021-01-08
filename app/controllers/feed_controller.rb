@@ -6,6 +6,7 @@ class FeedController < ApplicationController
       @posts = Post.joins(:user)
                 .where(posts: {user_id: @users.followee_id})
                 .or(Post.joins(:user).where(posts: {user_id: current_user.id}))
+                .order(created_at: :desc)
     else
       @posts = []
     end
