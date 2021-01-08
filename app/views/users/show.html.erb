@@ -1,11 +1,31 @@
 <p id="notice"><%= notice %></p>
 
-<form method="post" action="/users/follow">
-  <input type="hidden" name="followee" value="<%= @user.id %>">
-  <button type="submit">Follow</button>
-  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-</form>
+<div class="uk-container profile">
 
-<p><%= @user.email %>
+  <div class="uk-flex uk-flex-middle uk-flex-between">
 
-<%= link_to '< Users', users_path %>
+    <h2><%= @user.username %></h2>
+
+    <% if current_user.id != @user.id && !@follow_relationship_exists %>
+      <form method="post" action="/users/follow">
+        <input type="hidden" name="followee" value="<%= @user.id %>">
+        <button type="submit">Follow</button>
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      </form>
+    <% elsif current_user.id != @user.id %>
+      <form method="post" action="/users/unfollow">
+        <input type="hidden" name="followee" value="<%= @user.id %>">
+        <button type="submit">Unfollow</button>
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      </form>
+    <% end %>
+
+  </div>
+
+  <div class="profile--gallery">
+    <% @posts.each do |post| %>
+      <%= link_to image_tag(post.image, class: "profile--gallery-image"), post, :class => "profile--gallery-item" if post.image.attached? %>
+    <% end %>
+  </div>
+
+</div>
