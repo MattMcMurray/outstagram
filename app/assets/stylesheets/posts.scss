@@ -4,14 +4,9 @@
 
 .posts {
   &--feed {
-
-    ul, li {
+    ul,
+    li {
       list-style-type: none;
     }
   }
-
-  &--image {
-    height: 500px;
-  }
-
 }
