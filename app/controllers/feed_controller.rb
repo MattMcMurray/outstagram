@@ -13,5 +13,7 @@ class FeedController < ApplicationController
 
   def explore
     @users = User.where.not(id: current_user.id)
+    # TODO: select posts not created by logged in user
+    @posts = Post.limit(25).order("RANDOM()")
   end
 end
