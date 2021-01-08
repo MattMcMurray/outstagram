@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h2>
-<%= link_to @user.username, @user%>
+<%= link_to @post.user.username, @post.user%>
 </h2>
 <%= image_tag(@post.image, class: "posts--image") if @post.image.attached? %>
 <p>

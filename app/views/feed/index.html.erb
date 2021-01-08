@@ -2,7 +2,7 @@
   <div class="feed--content">
     <% @posts.each do |post| %>
       <div class="post">
-        <img src="<%= url_for(post.image) %>" class="feed--image">
+      <%= link_to image_tag(post.image, class: "feed--image"), post, :class => "explore--gallery-item" if post.image.attached? %>
         <p class="post--description">
           <span><%= link_to post.user.username, post.user %></span>
           <%= post.description %>
