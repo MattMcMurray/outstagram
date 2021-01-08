@@ -4,7 +4,7 @@
       <div class="post">
         <img src="<%= url_for(post.image) %>" class="feed--image">
         <p class="post--description">
-          <span><%= post.user.username %></span>
+          <span><%= link_to post.user.username, post.user %></span>
           <%= post.description %>
         </p>
       </div>
