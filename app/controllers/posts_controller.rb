@@ -10,6 +10,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @user = User.find_by(id: @post.user_id)
   end
 
   # GET /posts/new
@@ -19,6 +20,9 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+    if current_user.id != @post.user_id
+      redirect_to @post
+    end
   end
 
   # POST /posts
